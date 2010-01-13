@@ -1,0 +1,11 @@
+Git è un servizio di controllo versione, utile nello sviluppo di softwer da parte di più persone.
+Tramite git è possibile memorizzare sui repository le release di un certo programma.
+
+I repository sono dei server su cui noi salviamo i dati.
+Ogni volta che andiamo avanti con lo sviluppo del programma, salviamo i sorgenti, li inseriamo in un pacchetto (.tar.gz) ed eseguiamo un "commit", cioè una foto del nostro programma nell'istante in cui eseguiamo il commit.
+In questo modo avremo tutto l'avanzamento e lo sviluppo del programma memorizzato, in modo da poter tornare indietro in caso di errori, e in modo da poter collaborare tra più persone.
+
+E' possibile infatti eseguire la commit su singoli file sorgenti invece che su tutto il pacchetto (cioè tutto il progetto).
+In questo modo se un collaboratore sta lavorando su certi file, eseguirà il commit solo su quelli, che compariranno nel repository senza andare a sostituire i vecchi file, in modo che sia sempre possibile tornare indietro.
+
+
