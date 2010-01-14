@@ -50,6 +50,10 @@ CP=cp
 CCADMIN=CCadmin
 RANLIB=ranlib
 
+INCLUDES = -I/usr/local/include/mysql
+LIBS = -L/usr/local/lib/mysql -lmysqlclient -leibnetmux
+
+
 
 # build
 build: .build-post
@@ -60,7 +64,7 @@ build: .build-post
 .build-post: .build-impl
 # Add your post 'build' code here...
 
-
+eibtrace_LDADD = ../mylib/libmy.a -L/usr/local/lib -lpth -leibnetmux -lm -lzlogger   -lm
 # clean
 clean: .clean-post
 

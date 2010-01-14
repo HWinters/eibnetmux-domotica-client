@@ -6,27 +6,6 @@ Si deve utilizzare git e sincronizzarsi al mio progetto su http://github.com/nag
 Dopo di che dobbiamo compilare ed installare le dipendenze in modo da poter compilare il codice.
 Ho creato un file "install.sh" dentro la cartella dipendenze. Ma ho anche creato questa breve spiegazione di come farlo manualmente.
 
-Ecco come ho organizzato l'albero delle cartelle:
-
-`-- Eibnetmux
-    |-- Build
-    |   |-- Dipendenze
-    |   |   |-- polarssl-0.12.1
-    |   |   |-- pth-2.0.7
-    |   |   `-- zlogger-1.1.2
-    |   `-- eibnetmux-1.9.14
-    `-- Pacchetti
-        |-- Dipendenze
-        |   |-- polarssl-0.12.1-gpl.tgz
-        |   |-- pth-2.0.7.tar.gz
-        |   `-- zlogger-1.1.2.tar.gz
-        |-- Istruzioni
-        |-- Istruzioni~
-        `-- eibnetmux-1.9.14.tar.gz
-
-
-La cartella Pacchetti contiene tutti i pacchetti da installare.
-Build contiene tutti i pacchetti scompattati, quindi da compilare o gia compilati.
 
 Per prima cosa compiliamo quindi le dipendenze:
 
