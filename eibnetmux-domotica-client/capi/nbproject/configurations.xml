@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configurationDescriptor version="62">
+  <logicalFolder name="root" displayName="root" projectFiles="true">
+    <df name="capi" root=".">
+      <in>prepared.c</in>
+      <in>process_prepared_statement.c</in>
+      <in>process_result_set.c</in>
+    </df>
+    <logicalFolder name="ExternalFiles"
+                   displayName="Important Files"
+                   projectFiles="false">
+      <itemPath>Makefile</itemPath>
+      <itemPath>Makefile-capi.mk</itemPath>
+    </logicalFolder>
+  </logicalFolder>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
+  <projectmakefile>Makefile-capi.mk</projectmakefile>
+  <confs>
+    <conf name="Default" type="0">
+      <toolsSet>
+        <developmentServer>localhost</developmentServer>
+        <compilerSet>GNU|GNU</compilerSet>
+        <platform>2</platform>
+      </toolsSet>
+      <makefileType>
+        <makeTool>
+          <buildCommandWorkingDir>.</buildCommandWorkingDir>
+          <buildCommand>$(MAKE) -f Makefile</buildCommand>
+          <cleanCommand>$(MAKE) -f Makefile clean</cleanCommand>
+          <executablePath>prepared</executablePath>
+          <cTool>
+            <incDir>
+              <pElem>/usr/include/mysql</pElem>
+            </incDir>
+          </cTool>
+        </makeTool>
+      </makefileType>
+      <item path="process_result_set.c" ex="true" tool="0">
+      </item>
+    </conf>
+  </confs>
+</configurationDescriptor>

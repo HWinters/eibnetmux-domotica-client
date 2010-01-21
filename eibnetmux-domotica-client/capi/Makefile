@@ -1,0 +1,41 @@
+# C and C++ compilers
+CC = gcc
+CXX = g++
+
+# Use these settings if you have mysql_config.  Note that if you have
+# multiple installations of MySQL, you can compile with the client
+# library from any of them by changing the value of MYSQL_CONFIG to
+# the full pathname of the version of mysql_config that you want to
+# use.
+MYSQL_CONFIG = mysql_config
+INCLUDES = ${shell $(MYSQL_CONFIG) --include} -I/usr/local/include
+LIBS = ${shell $(MYSQL_CONFIG) --libs}  -L/usr/local/lib -lpth -leibnetmux -lm -lzlogger
+EMBLIBS = ${shell $(MYSQL_CONFIG) --libmysqld-libs}
+
+# Use these settings if you don't have mysql_config; modify as necessary
+#INCLUDES = -I/usr/local/mysql/include/mysql
+#LIBS = -L/usr/local/mysql/lib/mysql -lmysqlclient #-lm -lsocket -lnsl
+#EMBLIBS = -L/usr/local/mysql/lib/mysql -lmysqld #-lm -lsocket -lnsl
+
+ALL_PROGRAMS = prepared
+
+default:: $(ALL_PROGRAMS)
+
+
+all:: $(ALL_PROGRAMS)
+
+.c.o:
+	$(CC) -c $(INCLUDES) $<
+
+
+# Prepared-statement demonstration
+
+prepared.o: prepared.c \
+	process_prepared_statement.c \
+	process_result_set.c
+prepared:: prepared.o 
+	$(CXX) -o $@ prepared.o libmy.a $(LIBS)
+
+
+clean::
+	rm -f $(ALL_PROGRAMS) *.o
